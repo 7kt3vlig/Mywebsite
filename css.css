@@ -7,22 +7,29 @@
 
 /* Set up the body styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
+    scroll-behavior: smooth;
 }
 
 /* Navbar styles */
 .navbar {
     background-color: #333;
-    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .navbar ul {
     list-style: none;
     display: flex;
     justify-content: center;
+    margin: 0;
 }
 
 .navbar ul li {
@@ -33,39 +40,84 @@ body {
     color: #fff;
     text-decoration: none;
     font-size: 18px;
-    padding: 5px 10px;
-    transition: background-color 0.3s ease;
+    padding: 8px 15px;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .navbar ul li a:hover, 
 .navbar ul li a.active {
-    background-color: #555;
+    background-color: #ff5733;
     border-radius: 5px;
+    transform: scale(1.1);
 }
 
 /* Section styles */
 .section {
-    padding: 60px 20px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    padding: 20px;
+}
+
+.section .content {
+    max-width: 800px;
+}
+
+.section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.section p {
+    font-size: 1.2rem;
+    color: #fff;
 }
 
 #home {
-    background-color: #ffbe0b;
+    background: linear-gradient(135deg, #ffbe0b, #fb5607);
 }
 
 #info {
-    background-color: #fb5607;
-    color: white;
+    background: linear-gradient(135deg, #ff006e, #8338ec);
 }
 
 #about {
-    background-color: #8338ec;
-    color: white;
+    background: linear-gradient(135deg, #3a86ff, #00b4d8);
 }
 
 #contact {
-    background-color: #3a86ff;
+    background: linear-gradient(135deg, #06d6a0, #38b000);
+}
+
+/* Button styling */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #333;
+    border-radius: 50px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #ff5733;
+    transform: translateY(-5px);
+}
+
+/* Footer */
+footer {
+    background-color: #333;
     color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 /* Media query for responsiveness */
@@ -77,5 +129,14 @@ body {
 
     .navbar ul li {
         margin-bottom: 10px;
+    }
+
+    .section h1 {
+        font-size: 2.5rem;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
     }
 }
